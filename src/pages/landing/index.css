@@ -70,13 +70,40 @@
     margin-bottom: 0.75rem;
     color: #1b5e20; /* darker green */
   }
-  
-  /* About Section */
-  .about {
-    max-width: 900px;
-    text-align: center;
-    padding: 3rem 1rem;
+
+  .about-invasion {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 50px;
   }
+  
+  .invasion-barner {
+    width: 50%;
+    height: 400px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  /* Responsive for tablets & below */
+  @media (max-width: 992px) {
+    .about-invasion {
+      flex-direction: column; /* stack image and text */
+      padding: 30px 20px;
+    }
+  
+    .invasion-barner {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  
+    .about {
+      text-align: left; /* optional: align text left for readability */
+      padding: 1.5rem 0;
+    }
+  }
+  
   
   .about-title {
     font-size: 2rem;

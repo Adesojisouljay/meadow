@@ -205,9 +205,12 @@ logo.onload = () => {
 
   return (
     <div className="certificate-container">
-        <div>
+        {step === 1 && <div>
             <h1 className="head-title">Rigister for Invasion-2025</h1>
-        </div>
+        </div>}
+        {step === 2 && <div>
+            <h1 className="head-title">Generate and download attendance Image below</h1>
+        </div>}
       {step === 1 && (
         <form onSubmit={handleContinue} className="certificate-form">
           <input
@@ -300,6 +303,11 @@ logo.onload = () => {
               <button onClick={resetToPreview} className="btn secondary">
                 Back
               </button>
+            </div>
+            <div>
+                <a href="https://bit.ly/4800JL6" target="_blank" rel="noopener noreferrer">
+                    Recomended: Please fill our our google form
+                </a>
             </div>
           </div>
         </div>
