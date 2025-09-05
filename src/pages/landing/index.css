@@ -1,0 +1,101 @@
+/* General container */
+.landing-container {
+    min-height: 100vh;
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Hero Section */
+  .hero {
+    width: 100%;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 160px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #d4af37; /* gold */
+  }
+  
+  .subtitle {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+  
+  /* .btn {
+    margin-top: 1.5rem;
+    background-color: #d4af37;
+    color: #2e7d32;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  } */
+  
+  .btn:hover {
+    background-color: #b8942e; /* darker gold */
+  }
+  
+  /* Vision, Mission, Motto Section */
+  .info-section {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+  
+  .card {
+    background: white;
+    color: #2e7d32;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1b5e20; /* darker green */
+  }
+  
+  /* About Section */
+  .about {
+    max-width: 900px;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Footer */
+  .footer {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1b5e20; /* darker green */
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  

@@ -1,0 +1,126 @@
+.certificate-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+    /* Gradient background */
+    background: linear-gradient(135deg, #006400, #228B22, #FFD700);
+  
+    /* Prevent scroll */
+    overflow: hidden;
+    padding: 0; /* remove extra padding */
+  }
+  
+  /* Form styling */
+  .certificate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+  
+    /* White card look */
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  
+    /* Prevent overflow inside viewport */
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  /* Inputs */
+  .certificate-form input[type="text"],
+  .certificate-form input[type="email"],
+  .certificate-form input[type="file"] {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  /* Inputs focus */
+  .certificate-form input:focus {
+    border-color: #15803d;
+    box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.3);
+  }
+  
+  /* Buttons */
+  .certificate-form button,
+  .certificate-step2 .btn {
+    background: linear-gradient(135deg, #15803d, #065f46);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  
+  .certificate-form button:hover,
+  .certificate-step2 .btn:hover {
+    background: linear-gradient(135deg, #b45309, #facc15);
+    color: #1e293b;
+    transform: translateY(-2px);
+  }
+  
+
+  .certificate-step2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* White card look for step 2 */
+  .preview-card,
+  .canvas-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    max-height: 90vh;
+  }
+  
+  /* DP frame */
+  .dp-frame {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #15803d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #f3f4f6;
+  }
+  
+  .dp-placeholder {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6b7280;
+  }
+  
+  .dp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Canvas box inside card */
+  .canvas-box {
+    border: 2px solid #15803d;
+    border-radius: 12px;
+    max-width: 100%;
+  }
+  
