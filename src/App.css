@@ -7,13 +7,20 @@ a{
 }
 
 .btn {
-  background: linear-gradient(135deg, #006400, #228B22, #FFD700);
-  color: white;
+  margin-top: 1.5rem;
+  background-color: #d4af37;
+  color: #2e7d32;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
   border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.3s ease;
+
+  /* Responsiveness fix */
+  white-space: normal;   /* allow wrapping */
+  word-wrap: break-word; /* break long words if needed */
+  text-align: center;    /* center multiline text */
+  display: inline-block;
+  max-width: 100%;       /* never overflow container */
 }

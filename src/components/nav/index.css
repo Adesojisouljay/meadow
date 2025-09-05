@@ -1,20 +1,21 @@
-/* Navbar Styles */
+/* Navbar base */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #013220; /* deep green */
-    padding: 0 40px;
+    background: #013220;
+    padding: 0 20px;
     color: #fff;
     position: sticky;
     top: 0;
     z-index: 1000;
   }
-
-  .meadow-logo{
+  
+  .meadow-logo {
     width: 100px;
   }
   
+  /* Links (desktop) */
   .navbar-links {
     list-style: none;
     display: flex;
@@ -31,6 +32,39 @@
   }
   
   .navbar-links li a:hover {
-    color: #FFD700; /* gold hover */
+    color: #FFD700;
+  }
+  
+  /* Hamburger hidden by default (desktop) */
+  .menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .navbar-links {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: #013220;
+      flex-direction: column;
+      gap: 15px;
+      width: 200px;
+      padding: 1rem;
+      display: none;
+    }
+  
+    .navbar-links.open {
+      display: flex;
+    }
   }
   

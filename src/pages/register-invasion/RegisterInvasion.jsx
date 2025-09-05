@@ -252,11 +252,13 @@ logo.onload = () => {
             style={{ display: isGenerated ? "flex" : "none" }}
           >
             <canvas
-              ref={canvasRef}
-              width={600}
-              height={400}
-              className="canvas-box"
+                ref={canvasRef}
+                width={600}
+                height={400}
+                className="canvas-box"
+                style={{ width: "100%", height: "auto" }} // responsive scaling
             />
+
             <div style={{ display: "flex", gap: 10 }}>
               <button onClick={download} className="btn">
                 Download Image
