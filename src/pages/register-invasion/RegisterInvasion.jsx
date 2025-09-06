@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import whiteLogo from "../../assets/whiteLogo.png";
+import { registerInvasion } from "../../api";
 import "./index.css";
 
 const Certificate = () => {
@@ -10,6 +11,7 @@ const Certificate = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
+    phone: "",
     address: "",
     church: "",
   });
@@ -44,15 +46,36 @@ const Certificate = () => {
     setPhoto(url);
   };
 
-  const handleContinue = (e) => {
+  const handleContinue = async (e) => {
     e.preventDefault();
-    const { fullName, email, address, church } = formData;
-    if (fullName && email && address && church) {
-      setStep(2);
-    } else {
+    const { fullName, email, address, church, phone } = formData;
+  
+    if (!fullName || !email || !address || !church) {
       alert("Please fill in all fields before continuing.");
+      return;
     }
-  };
+  
+    try {
+      // Call backend API
+      const payload = {
+        name: fullName,
+        email,
+        phone,
+        address,
+        church,
+        event: "Invasion 2025",
+      };
+  
+      const response = await registerInvasion(payload);
+      console.log("✅ Registration saved:", response);
+  
+      // Only move forward if API succeeded
+      setStep(2);
+    } catch (error) {
+      console.error("❌ Registration failed:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  };  
 
   const drawBase = (ctx, canvas) => {
     // clear
@@ -182,6 +205,12 @@ logo.onload = () => {
 
   return (
     <div className="certificate-container">
+        {step === 1 && <div>
+            <h1 className="head-title">Register for Invasion-2025</h1>
+        </div>}
+        {step === 2 && <div>
+            <h1 className="head-title">Generate and download attendance Image below</h1>
+        </div>}
       {step === 1 && (
         <form onSubmit={handleContinue} className="certificate-form">
           <input
@@ -197,6 +226,14 @@ logo.onload = () => {
             name="email"
             placeholder="Email Address"
             value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="phone"
+            placeholder="Phone number"
+            value={formData.phone}
             onChange={handleChange}
             required
           />
@@ -252,11 +289,13 @@ logo.onload = () => {
             style={{ display: isGenerated ? "flex" : "none" }}
           >
             <canvas
-              ref={canvasRef}
-              width={600}
-              height={400}
-              className="canvas-box"
+                ref={canvasRef}
+                width={600}
+                height={400}
+                className="canvas-box"
+                style={{ width: "100%", height: "auto" }} // responsive scaling
             />
+
             <div style={{ display: "flex", gap: 10 }}>
               <button onClick={download} className="btn">
                 Download Image
@@ -264,6 +303,11 @@ logo.onload = () => {
               <button onClick={resetToPreview} className="btn secondary">
                 Back
               </button>
+            </div>
+            <div>
+                <a href="https://bit.ly/4800JL6" target="_blank" rel="noopener noreferrer">
+                    Recomended: Please fill our our google form
+                </a>
             </div>
           </div>
         </div>

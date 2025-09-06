@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import "./index.css";
+import invasion from "../../assets/invasion2025.jpeg"
 
 export default function LandingPage() {
   return (
@@ -39,36 +40,39 @@ export default function LandingPage() {
       </section>
 
       {/* About Invasion 2025 */}
-      <section className="about">
-        <h2 className="about-title">What is Invasion 2025?</h2>
-        <p>
-          Meadow began as a strictly online community, raising purposeful leaders
-          and equipping young people through virtual gatherings and teachings.
-        </p>
-        <p>
-          In time, God led us into physical gatherings. The first was held on
-          Friday, 15th December 2023 at Ibadan, themed "Voice of the Spirit"—a
-          meeting that stirred hunger for God and deepened our commitment to
-          purposeful living.
-        </p>
-        <p>
-          Now, we are stepping into our second physical gathering, themed Invasion
-          2025, taking place in Sagamu on Saturday, September 27th, 2025.
-        </p>
-        <p>
-          Invasion 2025 is more than a program, it is a divine movement to equip
-          young people for purpose, ignite spiritual fire and raise leaders who
-          will shine God’s light in every sphere of life.
-        </p>
-        <p>
-          Through worship, drama, talk sessions, and the ministry of seasoned
-          gospel ministers, it will be a life-changing encounter.
-        </p>
-        {/* <button className="btn">Be part of this movement – Register Today</button> */}
-        <Link to="/register-invasion" className="btn">
-            Be part of this movement – Register Today
-        </Link>
-      </section>
+      <div className="about-invasion">
+        <img className="invasion-barner" src={invasion} alt="invasion" />
+        <section className="about">
+            <h2 className="about-title">What is Invasion 2025?</h2>
+            <p>
+            Meadow began as a strictly online community, raising purposeful leaders
+            and equipping young people through virtual gatherings and teachings.
+            </p>
+            <p>
+            In time, God led us into physical gatherings. The first was held on
+            Friday, 15th December 2023 at Ibadan, themed "Voice of the Spirit"—a
+            meeting that stirred hunger for God and deepened our commitment to
+            purposeful living.
+            </p>
+            <p>
+            Now, we are stepping into our second physical gathering, themed Invasion
+            2025, taking place in Sagamu on Saturday, September 27th, 2025.
+            </p>
+            <p>
+            Invasion 2025 is more than a program, it is a divine movement to equip
+            young people for purpose, ignite spiritual fire and raise leaders who
+            will shine God’s light in every sphere of life.
+            </p>
+            <p>
+            Through worship, drama, talk sessions, and the ministry of seasoned
+            gospel ministers, it will be a life-changing encounter.
+            </p>
+            {/* <button className="btn">Be part of this movement – Register Today</button> */}
+            <Link to="/register-invasion" className="btn">
+                Be part of this movement – Register Today
+            </Link>
+        </section>
+      </div>
 
       {/* Footer */}
       <footer className="footer">

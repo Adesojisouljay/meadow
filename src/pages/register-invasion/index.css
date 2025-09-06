@@ -1,16 +1,20 @@
 .certificate-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
-    /* Gradient background */
     background: linear-gradient(135deg, #006400, #228B22, #FFD700);
   
-    /* Prevent scroll */
-    overflow: hidden;
-    padding: 0; /* remove extra padding */
+    /* allow scroll if content is taller than screen */
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .head-title{
+    color: white;
   }
   
   /* Form styling */
@@ -18,15 +22,14 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
   
-    /* White card look */
     background: rgba(255, 255, 255, 0.95);
     padding: 25px;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   
-    /* Prevent overflow inside viewport */
     max-height: 90vh;
     overflow-y: auto;
   }
@@ -42,7 +45,6 @@
     outline: none;
   }
   
-  /* Inputs focus */
   .certificate-form input:focus {
     border-color: #15803d;
     box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.3);
@@ -68,7 +70,6 @@
     transform: translateY(-2px);
   }
   
-
   .certificate-step2 {
     display: flex;
     justify-content: center;
@@ -88,7 +89,9 @@
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    width: 400px;
+  
+    width: 100%;
+    max-width: 400px;
     max-height: 90vh;
   }
   
@@ -122,5 +125,58 @@
     border: 2px solid #15803d;
     border-radius: 12px;
     max-width: 100%;
+    width: 100%;
+    height: auto; /* scale properly */
+  }
+  
+  /* ===================== */
+  /* Responsive Breakpoints */
+  /* ===================== */
+  @media (max-width: 768px) {
+    .certificate-form,
+    .preview-card,
+    .canvas-card {
+      max-width: 90%;
+      padding: 20px;
+    }
+  
+    .dp-frame {
+      width: 110px;
+      height: 110px;
+    }
+  
+    .certificate-form button,
+    .certificate-step2 .btn {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .certificate-form,
+    .preview-card,
+    .canvas-card {
+      max-width: 100%;
+      padding: 15px;
+    }
+  
+    .certificate-form input,
+    .certificate-form button {
+      font-size: 13px;
+      padding: 10px;
+    }
+  
+    .dp-frame {
+      width: 90px;
+      height: 90px;
+    }
+  
+    .dp-placeholder {
+      font-size: 14px;
+    }
+  
+    .canvas-box {
+      border-width: 1px;
+    }
   }
   
