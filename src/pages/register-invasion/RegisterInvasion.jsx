@@ -206,7 +206,7 @@ logo.onload = () => {
   return (
     <div className="certificate-container">
         {step === 1 && <div>
-            <h1 className="head-title">Rigister for Invasion-2025</h1>
+            <h1 className="head-title">Register for Invasion-2025</h1>
         </div>}
         {step === 2 && <div>
             <h1 className="head-title">Generate and download attendance Image below</h1>
@@ -260,7 +260,7 @@ logo.onload = () => {
         </form>
       )}
 
-      {step === 2 && (
+      {step === 1 && (
         <div className="certificate-step2">
           {/* preview card (hidden when isGenerated) */}
           <div

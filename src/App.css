@@ -4,6 +4,11 @@
 
 a{
   text-decoration: none;
+  color: #15803d;
+}
+
+a:hover {
+  color: #d4af37;
 }
 
 .btn {
