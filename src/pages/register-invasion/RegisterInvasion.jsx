@@ -260,7 +260,7 @@ logo.onload = () => {
         </form>
       )}
 
-      {step === 1 && (
+      {step === 2 && (
         <div className="certificate-step2">
           {/* preview card (hidden when isGenerated) */}
           <div
